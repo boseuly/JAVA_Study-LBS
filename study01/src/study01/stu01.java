@@ -10,8 +10,8 @@ public class stu01 {
 		char c = 'A';		// 'A'의 문자코드 : 65
 		
 		System.out.println(1+x << 33);  // 0~32		// 6
-		System.out.println(y >= 5 || x < 0 && x > 2); 	// ?	// true
-		System.out.println(y += 10 - x++);		// 12
+		System.out.println(y >= 5 || x < 0 && x > 2); 	// ?	// true // &&연산자가 우선순위
+		System.out.println(y += 10 - x++);		// 12	// 후위연산자이기 때문에 x: 3
 		System.out.println(x += 2); 			// 5
 		System.out.println(!('A' <= c && c <= 'Z'));	// false
 		System.out.println('C' - c);	// 2
@@ -20,7 +20,7 @@ public class stu01 {
 		System.out.println(c + 1); 		// 66
 		System.out.println(++c); 		// 67	// B
 		System.out.println(c++); 		// 67	// B
-		System.out.println(c);			// 68
+		System.out.println(c);			// 68	// C
 		
 		
 		/* [3-2] 아래의 코드는 사과를 담는데 필요한 바구니의 수를 구하는 코드이다. 만일 사과의 수가 123개이고 
@@ -33,6 +33,10 @@ public class stu01 {
 		System.out.println("필요한 바구니의 수 : " + numOfBuket);		
 		// 내가 쓴 답안 : (int) Math.ceil(numOfApples / sizeOfBuket)
 		// 정답 : numOfApples/sizeOfBuket + (numOfApples%sizeOfBucket > 0 ? 1 : 0)
+		
+		// int numOfBucket = (numOfApples / sizeOfBucket) % sizeOfBucket == 0 ? 
+		// (numOfApples / sizeOfBucket) : (numOfApples / sizeOfBucket) + 1;
+		
 		
 		
 		/*[3-3] 아래는 변수 num의 값에 따라 '양수','음수','0'을 출력하는 코드이다. 삼항 연산자를 이용해서 (1)에 알맞은 코드를 넣으시오.
@@ -69,9 +73,9 @@ public class stu01 {
 		
 		num = 24;
 		System.out.println(/*(1)*/);
-		// 내가 쓴 답안 : ((num / 10) + 1) * 10 - num
+		// 내가 쓴 답안 : ((num / 10) + 1) * 10 - num (이것도 맞음)
 		// 만약 20인 경우에는 10의 배수는 30, num의 값보다 크면서도 가장 가까워야 하기 때문에
-		
+		// 정답 : 10 - (num % 10)
 		
 		/*
 		 * [3-7] 아래는 화씨(Fahrenheit)를 섭씨(Celcius)로 변환하는 코드이다. 변환공식이 'c = 5/9 * (F - 32)'
@@ -101,7 +105,7 @@ public class stu01 {
 		double f = (Math.round((3/2) * 10) / 10.0);		// 답안 : ? 이거 모르겠음..		
 		long l = 3000 * 3000 * 3000;					// 답안 : 3000*3000*3000L
 		
-		float f2 = 0.1f;			
+		float f2 = 0.1f;	
 		double d = 0.1;
 		
 		boolean result = d==f2;		// (float)d==f2  서로 다른 자료형이기 때문에 더 큰 자료형인 float으로 형변환
@@ -120,9 +124,10 @@ public class stu01 {
 		
 		char ch1 = 'z';
 //		boolean b = (/*(1)*/);
-		
+//		boolean, 대문자, 소문자, 숫자를 이용해서 범위를 
 //		System.out.println(b);
 		
+		// 정답 : 'a' 
 		
 		
 		
@@ -131,10 +136,23 @@ public class stu01 {
 		 * 문자코드는 소문자가 대문자보다 32만큼 더 크다. 예를 들어 'A'의 코드는 65이고, 'a'의 코드는 97이다.
 		 * (1)~(2)에 알맞은 코드를 넣으시오.
 		 */
+//		char lowerCase = (/*(1)*/) ? (/*(2)*/) : ch2;
 		
+		char ch2 = 'A';		// 아스키코드 65
 		
+		// 내 답안 
+		// lowerCase = (ch2 > 65 && ch2 <= 91) ?  Character.toLowerCase(ch2): ch2;
 		
+		// 정답('A' <= ch && ch <= 'z')
+		char lowerCase = (ch2 > 65 && ch2 <= 91)? (char)(ch + 32) : ch2;
 		
+		System.out.println("ch2:"+ch2);
+		System.out.println("ch2 to lowerCase :" + lowerCase);
+		
+		/*
+			대문자인 경우에만 문자코드의 값을 32만큼 증가시키면 소문자가 됨. 
+			
+		*/
 	}
-
+		
 }
