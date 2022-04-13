@@ -1,6 +1,6 @@
 package study01;
 
-public class stu01 {
+public class Stu01 {
 
 	public static void main(String[] args) {
 		// [3-1] 다음 연산의 결과를 적으시오.
