@@ -36,13 +36,14 @@ public class Stu02 {
 		 * [4-2] 1 ~ 20까지의 정수 중에서 2 또는 3의 배수가 아닌 수의 총합을 구하시오. 
 		 */
 		int sum = 0;
-		for(int i = 1; i <= 20; i++) {	// 1~20까지의 정수
+		for(int i = 1; i <= 20; i++) {			// 1~20까지의 정수
 			if(i % 2 != 0 && i % 3 != 0) {		// 만약 i가 2로 나눠지지 않거나, i가 3으로 나눠지지 않는다면  
 				sum += i;						// -> 만약에 2,3 둘 중 하나로라도 나눠떨어진다면 성립 X -> && 연산자 사용
 			}
 			System.out.println(sum);
 		}
-		System.out.println("총합 : " + sum);		// 내가 쓴 답안 : 73
+		System.out.println("총합 : " + sum);		
+		// 내 답안 : 73
 		
 		
 		/*
@@ -62,41 +63,73 @@ public class Stu02 {
 		 * 처음에는 중첩 for문인 줄 알았는데 아님,,
 		 */
 		
+		
 		// 내 틀린 답안... 101 나옴
-		sum = 1;
+		total = 1;
 		int sum1 = 0;	// 덧셈
 		int sum2 = 0;	// 뺄셈
-		int count = 1;		// 몇 번째에서 
+		int count = 1;	// 몇 번째에서
 		
-		while(sum1 < 100) {	// sum이 100보다 작거나 같다면 실행해라, 100보다 크면 실행X
-			++count; 		// 횟수를 먼저 올려준다.
-			
+		while(true) {	// total이 100보다 작거나 같다면 실행해라, 100보다 크면 실행X
 			if(count % 2 == 0) {	// 만약 짝수번째라면
-				sum1 += 2;
-				sum += sum1;		// sum = sum + sum1
+				sum1++;				// sum1
+				sum2++;
+				total += sum1;		// sum = sum + sum1
+				count++;
 			}else if(count % 2 != 0){
-				sum2 += 2;
-				sum -= sum2;			// sum = sum - sum2; 
+				sum1++;	
+				sum2++;
+				total -= sum2;		// sum = sum - sum2;
+				count++;
 			}
-			if(sum >= 100) {
+			if(total >= 100) {
 				break;
 			}
-			
 		}
+		System.out.println("총합(total) : " + total);
+		System.out.println("몇 번째 : " + count);
+		
+		
+		
+		
+		// 유라언니 풀이
+		int neg = 0;   	 	// 음수
+        int pos = 0;    	// 양수
+        int total2 = 0;     // 총 합계
+        count = 0;    		// 몇 까지 더하는가?
+
+        for(int i = 1;;i++) {
+            if(total2 >= 100) {
+                break;
+            } else {
+                if(i % 2 == 0) {
+                    neg = -i;
+                    total2 += neg;
+                    count += 1; 
+                } else {
+                    pos = +i;
+                    total2 += pos;
+                    count += 1;
+                }
+            }
+        }
+        
+        System.out.println(count);
+        System.out.println(total2);
+		
 		// 정답↓   (이렇게 했는데도 199가 안 나오고 101가 나옴)
 		
 		sum = 0;		// 총합을 저장할 변수
 		int s = 1;		// 값의 부호를 바꿔주는 데 사용할 변수
 		int num = 0;
 		
-		for(int  i = 1; true; i++, s =- s) {		// 매 반복마다 s의 값은 1, -1, 1, -1 ... // 증감식에 두 개를 쓸 수 있는 줄 몰랐음..
+		for(int i = 1; true; i++, s =- s) {		// 매 반복마다 s의 값은 1, -1, 1, -1 ... // 증감식에 두 개를 쓸 수 있는 줄 몰랐음..
 			num = s * i; 	// i와 부호(s)를 곱해서 더할 값을 구한다  ->  i를 곱하면 부호가 바뀌니까
 			sum += num;
 			
 			if(num >= 100) {// 총합이 100보다 같거나 크면 반복문을 빠져 나간다.
 				break;
 			}
-			
 		}
 		System.out.println(num);
 		System.out.println(sum);
@@ -106,8 +139,8 @@ public class Stu02 {
 		/*
 		 * [4-5] 다음의 for문을 while문으로 변경하시오.
 		 */
-		for(int i = 0; i <= 10; i++) {
-			for(int j = 0; j <= i; j++) {
+		for(int i1 = 0; i1 <= 10; i1++) {
+			for(int j = 0; j <= i1; j++) {
 				System.out.print("*");
 			}
 			System.out.println();		// 개행
