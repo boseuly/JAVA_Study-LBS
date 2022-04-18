@@ -14,7 +14,7 @@ public class Stu03 {
 //		s.question08();
 //		s.question09();
 //		s.question10();
-		s.question11();
+//		s.question11();
 	}
 	
 	public void question01() {
@@ -43,15 +43,29 @@ public class Stu03 {
 		/*
 		 * [4-12] 구구단의 일부분을 다음과 같이 출력하시오.   (줄바꿈이 너무 어려움..)  **틀림
 		 */
-		int n = 2;
-		
-		for(int i = 1; i < 4; i++) {
-			for(int j = 0; j< 3; j++) {
-				System.out.print(n + "*" + i + "=" + n*j + "\t");
-				n++;
+		for(int i = 1; i <= 9; i++) {
+			for(int j = 1; j <= 3; j++) {
+				int x = (j+1) + (i-1)/3*3;
+				int y = i%3 == 0? 3: i%3;
+				
+				if(x>9)
+					break;
+				
+				System.out.print(x+"*"+y+"="+x*y + "\t");
 			}
 			System.out.println();
+			if(i%3 == 0) System.out.println();	// 개행
 		}
+		
+		
+//		// 규연언니
+//		 for(int i = 2; i <= 9; i++) {
+//	            for(int j = 1; j <= 3; j++) {
+//	                System.out.printf("%d * %d = %d", i, j, (i * j));
+//	                System.out.printf("\n");
+//	            }
+//	            System.out.printf("\n");
+//	        }
 		
 	}
 	
@@ -63,7 +77,6 @@ public class Stu03 {
 		String value = "1234";
 		char ch = ' ';
 		boolean isNumber = true;
-		int n = 0;			// 
 		
 		
 		// 반복문과 cahrAt(i)를 이용해서 문자열의 문자를 하나씩 읽어서 검사한다.
@@ -71,14 +84,11 @@ public class Stu03 {
 			/*
 			 * (1)
 			 */
-			ch = value.charAt(i);			// char형 ch 변수에 추출한 문자를 넣는다 -> 하나라도  
-			if(!(ch >= 48 && ch <= 57)) {	// 만약 추출된 문자가 48~57 범위를 벗어났다면		
-				n++;
+			ch = value.charAt(i);			// char형 ch 변수에 추출한 문자를 넣는다 -> 하나라도
+			if(!(ch >= '0' && ch <= '9')) {	// 만약 추출된 문자가 48~57 범위를 벗어났다면	// ch 타입에 맞춰서 비교해주기
+				isNumber = false;
+				break;
 			}
-			if(n>=1) {						// 만약 숫자 범위를 벗어났다면 isNumber = false; 
-				isNumber = false;			// 숫자가 아님
-			}
-			
 		}
 		if(isNumber) {				// 그렇게 추출된 문자가 숫자인지 확인하기 위해서는 아스키코드를 사용해야 한다.
 			System.out.println(value + "는 숫자입니다.");
@@ -111,7 +121,13 @@ public class Stu03 {
 			if(input == answer) {		// 사용자가 입력한 값과 랜덤값을 비교해서 
 				System.out.println(count + "번만에 맞췄습니다.");		// 만약 맞았다면 몇 번만에 맞았다고 알려주기
 				break;
+			}else if(input > answer) {
+				System.out.println("더 작은 수를 입력하세요.");
+			}else if(input < answer) {
+				System.out.println("더 큰 수를 입력하세요.");
 			}
+			
+		
 		
 		}while(true);					// 무한반복
 	}
@@ -137,6 +153,30 @@ public class Stu03 {
 		}else {
 			System.out.println(number + "는 회문수가 아닙니다.");
 		}
+		
+		
+		// 규연언니 풀이
+		
+		String number1 = "12321";
+        boolean result1 = false;
+
+        for(int i = 0; i < number1.length(); i++) {
+            if(number1.charAt(i) == number1.charAt(number1.length() - (i+1))) {
+                result1 = true;
+            } else {
+                result1 = false;
+                break;
+            }
+
+            if(i == (number1.length() - (i+1))){			// 중간 글자
+                break;
+            }
+        }
+        if(result1) {
+            System.out.println(number1 + "는 회문수입니다.");
+        } else {
+            System.out.println(number1 + "는 회문수가 아닙니다.");
+        }
 	}
 	
 	public void question06() {
@@ -149,12 +189,14 @@ public class Stu03 {
 		 * d. int[] arr = new int[5]{1,2,3,4,5};	// X 잘못된 이유 : 값을 초기화할 때는 int[] arr = new int[]{1,2,3,4,5} 가 맞음
 		 * e. int arr[5];							// X 공간을 생성할 때는 new 생성자를 사용해야 한다. int arr[] = new int[5] 
 		 * f. int[] arr[] = new int[3][];			// 가변배열, 뒤에 공간은 나중에 생성할 수 있다.
+		 * 
+		 * 정답 : d, e
 		 */
 	}
 	
 	public void question07() {
 		/*
-		 * [5-2] 다음과 같은 배열이 있을 때, arr[3].length의 값은 얼마인가?
+		 * [5-2] 다음과 같은 배열이 있을 때, arr[3].length의 값은 얼마인가? (순간적으로 헷갈려서 4라고 함..)
 		 */
 		
 		int[][] arr = {
@@ -163,7 +205,7 @@ public class Stu03 {
 				{20,20,20,20},
 				{30,30}
 		};
-		// 정답 : 4
+		// 정답 : 2
 	}
 	
 	public void question08() {
@@ -210,6 +252,53 @@ public class Stu03 {
 		System.out.println("total = " + total);
 		System.out.println("average = " + average);
 		
+		// 규연언니 풀이
+		
+		/*
+		 int[][] arr = {
+            {5, 5, 5, 5, 5},
+            {10, 10, 10, 10, 10},
+            {20, 20, 20, 20, 20},
+            {30, 30, 30, 30, 30},
+        };
+
+        int total = 0;
+        float average = 0;
+
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = 0; j < arr[i].length; j++) {
+                total += arr[i][j];
+            }
+        }
+
+        int l = 0; 
+        for(int i = 0; i <arr.length; i++) {
+            l += arr[i].length;
+        }
+        average = (float)total / l;
+
+
+        System.out.println("total = " + total);
+        System.out.println("average = " + average);
+		 */
+		
+		// 유라언니 풀이
+		/*
+		 int total = 0;
+        float average = 0;
+        int count = 0;
+
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = 0; j < arr[i].length; j++) {
+                total += arr[i][j];
+            }
+            count += arr[i].length;
+        }
+        average = (float)total / (float)count;
+
+        System.out.println("total = " + total);
+        System.out.println("average = " + average);
+		 */
 	}
 	
 	public void question10() {
@@ -224,33 +313,37 @@ public class Stu03 {
 		int[] ball3 = new int[3];
 		
 		// 배열 ballArr의 임의의 요소를 골라서 위치를 바꾼다.
-		for(int i = 0; i < ballArr.length;) {
+		for(int i = 0; i < ballArr.length;i++) {
 			int j = (int)(Math.random() * ballArr.length); // 1~9 사이의 랜덤값	// 랜덤값을 i번째와 값이 겹치는지 확인하고 넣으면 됨
 			int tmp = 0;				// j번째 값과 i번째 값을 바꾼다. -> i번째값은 tmp에 넣고 j에 넣어준다.
 			
 			// (1)
-			// j가 중복된 값으로 나오면?	 
-			if(j > i) {						// j는 무조건 i보다 커야 한다.
 				tmp = ballArr[i];			// tmp에 ballArr[i]번째 값을 미리 넣어둔다.
 				ballArr[i] = ballArr[j];	// ballArr[i]번째 인덱스에 [j]번째 값을 대입한다.
 				ballArr[j] = tmp;			// ballArr[j]에는 tmp를 대입한다.
-				i++;						// 만약 i보다 j가 작은 수가 나오면 i가 증가하지 않고 for문이 돌아가야 하기 때문에 제대로 값이 바뀌었을 경우에만 i++을 해준다.
-				if(i == 8) {				// i가 8일 때 break;를 해주지 않으면 무한루프에 빠진다.
-					break;
-				}
-				
-			}
 		}
 		
 		// 배열 ballArr의 앞에서 3개의 수를 배열 ball3로 복사한다.
 		// (2)
+		// 나는 얕은 복사
 		for(int i = 0; i < 3; i++) {
 			ball3[i] = ballArr[i];
 		}
+		// 정답
+		System.arraycopy(ballArr, 0, ball3, 0, 3);
+		
 		
 		for(int i = 0; i < ball3.length; i++) {
 			System.out.print(ball3[i]);
 		}
+		
+		// 규연언니 풀이
+		/*
+		 Random rand = new Random();
+        int ball = rand.nextInt(900)+100;
+
+        System.out.println(ball);
+		 */
 	}
 	
 	public void question11() {
@@ -278,7 +371,37 @@ public class Stu03 {
 			
 		}
 		
+		//유라언니 풀이
+		/*
+		int[] coinUnit = {500, 100, 50, 10};
+
+        int money = 2680;
+        System.out.println("money = " + money);
+
+        for(int i = 0; i < coinUnit.length; i++) {
+            if(money % coinUnit[i] < coinUnit[i]) {
+                int num = money / coinUnit[i];
+                money %= coinUnit[i];			// 남은 돈
+                System.out.println(coinUnit[i] + "원 : " + num);
+               }
+             }
+		 */
+		
+		// 규연언니 풀이
+		/*
+		int[] coinUnit = {500, 100, 50, 10};
+
+        int money = 2680;
+        int res = 0;
+        System.out.println("money = " + money);
+
+        for(int i = 0; i < coinUnit.length; i++) {
+            res = money / coinUnit[i]; 				// 해당 동전이 얼마나 필요한지 
+            System.out.printf("%d원 = %d\n", coinUnit[i], res);
+            money = money % coinUnit[i]; 
+        }
+		 */
+		
 	}
-	
 	
 }
