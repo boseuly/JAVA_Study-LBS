@@ -11,7 +11,7 @@ public class Stu04 {
 		 * [5-7] 문제 [5-6]에 동전의 개수를 추가한 프로그램이다. 커맨드라인으로부터 거슬러 줄 금액을 
 		 * 입력 받아 계산한다. 보유한 동전의 개수로 거스름돈을 지불할 수 없으면 '거스름 돈이 부족합니다.'
 		 * 라고 출력하고 종료한다. 지불할 돈이 충분히 있으면, 거스름돈을 지불한 만큼 가진 돈에서 빼고 
-		 * 남은 동전의 개수를 화면에 출력하낟. (1)에 알맞은 코드를 넣어서 프로그램을 완성하시오.
+		 * 남은 동전의 개수를 화면에 출력한다. (1)에 알맞은 코드를 넣어서 프로그램을 완성하시오.
 		 */
 		
 //		if(args.length != 1) {
@@ -40,10 +40,6 @@ public class Stu04 {
 			
 			// 금액을 동전 단위로 나누기
 			coinNum = money / coinUnit[i];		// 각 동전마다 몇 개가 필요한지 
-			if(coinNum > 5) {					// 필요한 개수가 5개 보다 크다면 coin = 5
-				coinNum = 5;
-			}
-			System.out.println(coinUnit[i] +"원 : " + coinNum);
 			
 			// coin에서 coinNum만큼 빼기
 			if(coin[i] < coinNum) {			// 내가 가진 동전 개수가 내야하는 동전개수보다 적을 때 
@@ -56,7 +52,7 @@ public class Stu04 {
 			
 			// 금액에서 동전의 개수(coinNum)와 동전 단위를 곱한 값을 뺀다.
 			money = money - (coinNum * coinUnit[i]);		// 내가 낸 돈을 뺀 나머지 금액을 가지고 다음 동전의 개수를 계산해야 한다.
-			
+			System.out.println(coinUnit[i] +"원 : " + coinNum);
 		}
 		
 		if(money > 0) {		// 위에 로직을 다 실행했는데도 내야 하는 돈이 남아있다면 
@@ -71,10 +67,10 @@ public class Stu04 {
 		System.out.println("-----ex01-----");
 		Stu04 s = new Stu04();
 //		s.ex02();
-//		s.ex03();
+		s.ex03();
 //		s.ex05();
 //		s.ex06();
-		s.ex07();
+//		s.ex07();
 	}
 	
 	public void ex01() {
@@ -101,6 +97,7 @@ public class Stu04 {
 			}else if(answer[i] == 4) {
 				counter[3]++;
 			}
+			// 답안 : counter[answer[i]-1]++; (이게 훨씬 수월하고 활용적임)
 			
 		}
 		
@@ -111,7 +108,13 @@ public class Stu04 {
 			System.out.println(counter[i] + " " + star);
 			
 			System.out.println();
+			
+			/* 답안
+			System.out.print(counter[i]);
+			for(int j = 0; j < counter[i];j++){
+				System.out.print("*");	// counter[i]의 값 만큼 '*'를 찍는다.
 		
+			*/
 		}
 	}
 	
@@ -137,9 +140,15 @@ public class Stu04 {
 		System.out.println();			// 개행
 		
 		for(int i = 0; i < star.length;i++) {			// star.length : 4 ([0]~[3])
-			for(int j = 0; j < star[i].length;j++) {	// star[i].length : 5([0]~[4])
+			for(int j = 0; j < star[i].length;j++) {	// star[i].length : 5([0]~[4])	
 				// (1) 알맞은 코드를 넣어서 완성하시오.
-				result[j][(star.length)-i-1] = star[i][j];		 
+				result[j][(star.length)-i-1] = star[i][j];
+				
+				/*답안 -> 답안이랑 다를 거 없음
+				 int x = j;
+				 int y = star.length-1-i;
+				 result[x][y] = star[i][j];
+				 */
 			}
 		}
 		for(int i = 0 ; i < result.length; i++)	{
@@ -153,7 +162,7 @@ public class Stu04 {
 	
 	public void ex04() {
 		/*
-		 * [5-10] 다음은 알파벳과 숫자를 아래에 주어진 암호표로 암호화하는 프로그램이다.
+		 * [5-10] 다음은 알파벳과 숫자를 아래에 주어진 암호표로 암호화하는 프로그램이다.		// 틀림(못 풂..)
 		 * (1)에 알맞은 코드를 넣어서 완성하시오.
 		 */
 		// 'a'~'z'
@@ -170,15 +179,48 @@ public class Stu04 {
 		for(int i = 0; i < src.length();i++) { 
 			char ch = src.charAt(i);		// 문자열 -> charAt()으로 char형으로 변환
 			// (1) 알맞은 코드를 넣어 완성하시오.
-			if(ch >= '0' && ch <= '9') {	// 이 경우에는 numCode를 사용해줘야 한다. 	
-				for(int j = 0; j < 9; i++) {	// ch 와 numCode를 매칭
-					
-					
-				}
-			}
-			
+			/*답안
+			 if('a' <= ch && ch <='z'){
+			 	result += abcCode[ch-'a'];	// ch의 값이 'a' -> 'a'(97)-'a'(97) = 0 따라서 abcCode[0]이 된다.		
+			 }else if('0' <= ch && ch <= '9'){
+			 	resuslt += numCode[ch-'0'];	
+			 }
+			 */
 		}
 		
+		
+		
+		/* 규연언니 풀이(for문 밖으로 뺌)
+		 char[] temp1 = new char[abcCode.length];
+        int idx1 = 0;
+        for(int i = 97; i < 123; i++) {
+            temp1[idx1] = (char)i;
+            idx1++;
+        }
+
+        char[] temp2 = new char[numCode.length];
+        int idx2 = 0;
+        for(int i = 48; i < 58; i++) {
+            temp2[idx2] = (char)i;
+            idx2++;
+        }
+
+        for(int i = 0; i < src.length();i++) {
+            char ch = src.charAt(i);
+            for(int j = 0; j < abcCode.length; j++) {
+                if(ch == temp1[j]) {
+                    result += abcCode[j];
+                    break;
+                } 
+            }
+            for(int j = 0; j < numCode.length; j++) {
+                if(ch == temp2[j]) {
+                    result += numCode[j];
+                    break;
+                } 
+            }  
+		 
+		 */
 		System.out.println("src : " + src);
 		System.out.println("result : "+ result);
 	}
@@ -196,14 +238,15 @@ public class Stu04 {
 				{40,40,40},
 				{50,50,50}
 		};
-		int[][] result = new int[score.length + 1][score[0].length + 1];
+		int[][] result = new int[score.length + 1][score[0].length + 1];	// result.length : 6, result[i].length : 4
 		
-		for(int i = 0; i < score.length; i++) {			// score.length : 5
-			for(int j = 0; j < score[i].length;j++) {	// score[i].length : 3
+		// result[][]배열에 값넣고, result마지막 열까지 채워주기
+		for(int i = 0; i < score.length; i++) {			// score.length : 5 (행)
+			for(int j = 0; j < score[i].length;j++) {	// score[i].length : 3(열)
 				//(1)
-				result[i][j] = score[i][j];
-				result[i][result[i].length-1] += result[i][j];		// 마지막 인덱스([result[i].length -1])에 result[i][j]의 값을 넣어준다.
-				// result[5][j]
+				result[i][j] = score[i][j];				// 우선result[][]배열에 값을 넣어준다.
+				result[i][result[i].length-1] += result[i][j];	// 마지막 열에는 인덱스([result[i].length -1])에 result[i][j]의 값을 넣어준다.
+				// result[i][2]
 			}
 		}
 		// result의 마지막 행(가로) 부분 구해주기
@@ -214,6 +257,18 @@ public class Stu04 {
 			result[result.length-1][result[i].length-1] += result[result.length-1][i];	// result의 마지막 행, 마지막 열은 result[5][0]+[5][1]+[5][2]의 값이다.
 			
 		}
+		
+		/* 유라언니, 규연언니 풀이
+		int[][] result = new int[score.length + 1][score[0].length + 1];
+
+        for(int i = 0; i < score.length; i++) {
+            for(int j = 0; j < score[i].length; j++) {
+
+                result[i][j] = score[i][j];
+                result[i][3] += score[i][j];
+                result[5][j] += score[i][j];
+                result[5][3] += score[i][j];
+		 */
 		
 		for(int i = 0; i < result.length; i++) {
 			for(int j = 0; j < result[i].length; j++) {
