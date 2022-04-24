@@ -1,4 +1,4 @@
-package study01;
+package exam01;
 
 public class Stu02 {
 
