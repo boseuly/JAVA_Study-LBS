@@ -13,9 +13,8 @@ public class Stu03 {
 		 * (1) 알맞은 코드를 넣어 완성하시오.
 		 */
 		
-		double l = Math.sqrt(Math.pow(x-x1 ,2) + Math.pow(y-y1, 2));
+		double l = Math.sqrt(Math.pow(x-x1 ,2) + Math.pow(y-y1, 2));	// 제곱해주는 함수 Math.pow를 따로 사용하기
 		return l;
-		
 		
 	}
 	

@@ -27,16 +27,20 @@ class SutdaCard {
 	int num;
 	boolean isKwang;	// 기본값이 true
 	
+	/*
+	 * [6-2]
+	 */
+	
 	// 매개 변수 없는 생성자 & 매개변수 있는 생성자
-	public SutdaCard() {
-		this(1, true);
+	SutdaCard() {
+		this(1, true);	
 	}
-	public SutdaCard(int num, boolean isKwang) {
+	SutdaCard(int num, boolean isKwang) {
 		this.num = num;
 		this.isKwang = isKwang;
 	}
 	
-	public String info() {		
+	String info() {		
 		if(isKwang) {		// 만약 isKwang이 true면 
 			return num+"k";	// 숫자를 문자열로 변환하기 위해서는 ""를 해주면 된다.
 		}

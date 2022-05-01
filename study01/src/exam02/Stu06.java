@@ -1,6 +1,9 @@
 package exam02;
 
 class Marine{
+	/*
+	 * [6-9]
+	 */
 	int x = 0, y = 0;	// marine의 위치좌표(x,y)		-> 인스턴스
 	int hp = 60;		// 현재 체력					-> 인스턴스
 	int weapon = 60;	// 공격력						-> static

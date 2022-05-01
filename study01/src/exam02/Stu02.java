@@ -60,12 +60,15 @@ class Student{
 	
 
 	float getAverage() {
-		float result = Math.round(((float)this.getTotal() / 3) * 10) / (float)10;	// round는 1의 자리에서 반올림 -> 
-		return result;
+		float result = Math.round(((float)this.getTotal() / 3) * 10) / (float)10;	// round는 1의 자리에서 반올림 -> 10 곱해서 786.xxx로 만들어주고 그걸 반올림해서 정수로   
+		return result;																// 만들어준 다음에 다시 10.0으로 나눠준다.
 		
+		/* 교재 풀이
+		 * return (int)(getTotal() / 3f * 10 + 0.5f) / 10f; 
+		 */
 	}
 	
-	StringBuilder info() {
+	StringBuilder info() {								// public 안 붙임 (교재는 붙임)
 		StringBuilder result = new StringBuilder();
 		result.append(name + ", ");
 		result.append(ban+ ", ");
