@@ -20,6 +20,8 @@ public class Stu02 {
 			this.isPowerOn = true;
 		}
 		
+	// 다른 답안 : isPowerOn = !isPowerOn;
+		
 	}
 	void volumeDown() {
 		// (3) volume의 값이 max_volume보다 작을 때만 값을 1 증가시킨다.
