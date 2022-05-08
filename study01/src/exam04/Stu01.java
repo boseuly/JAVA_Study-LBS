@@ -56,6 +56,7 @@ class SutdaDeck{
 	 *  	매개변수 : int index - 위치
 	 */
 	
+	// 매개변수 있을 때는 유효성 검사 해주기
 	SutdaCard pick(int index) {
 		
 		return cards[index];
