@@ -115,6 +115,7 @@ class Buyer {
 			1.3 물건을 사고 남은 금액(money)를 출력한다
 		*/
 		
+		
 		System.out.println(Arrays.toString(cart));	// 물건 목록
 		
 		int sum = 0;

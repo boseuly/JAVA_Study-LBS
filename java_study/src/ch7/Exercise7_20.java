@@ -32,7 +32,7 @@ class Child extends Parent {
 
 }
 
-/* [7-20]
+/* 
  * 내 답안 : 100
  * 		   Parent Method
  * 		   200

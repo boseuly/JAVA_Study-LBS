@@ -12,7 +12,7 @@ public class Exercise7_18 {
 		}else if(r instanceof SingRobot) {		// 만약 r이 참조하고 있는 타입이 SingRobot이라면
 			SingRobot robot = (SingRobot)r;		// 1. r을 SingRobot으로 형변환한다.
 			robot.sing();						// 2. SingRobot 클래스의 sing() 메소드를 호출한다.
-		}else {					
+		}else {									// 반복
 			DrawRobot robot = (DrawRobot)r;	
 			robot.draw();
 		}
