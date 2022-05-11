@@ -1,9 +1,10 @@
-package exam05;
+package ch7;
 
-public class Stu01 {
+public class Exercise7_22 {
 
 	public static void main(String[] args) {
 		
+
 	}
 
 }
