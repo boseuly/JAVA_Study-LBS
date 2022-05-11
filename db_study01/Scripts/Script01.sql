@@ -35,4 +35,8 @@ WHERE EXTRACT(YEAR FROM HIRE_DATE) >= 2000
 
 /*
  * 김경욱 문제 
+<<<<<<< HEAD
  */ 
+=======
+ */
+>>>>>>> branch 'main' of https://github.com/boseuly/Study_LBS.git
