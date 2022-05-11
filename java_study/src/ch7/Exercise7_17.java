@@ -21,7 +21,7 @@ class Unit {
 }
 
 
-public class Stu01 {
+public class Exercise7_17 {
 	public static void main(String[] args) {
 		/*
 		 * [7-17] 아래 세 개의 클래스로부터 공통부분을 뽑아서 Unit이라는 클래스를 만들고
