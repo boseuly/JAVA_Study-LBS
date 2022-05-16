@@ -106,7 +106,8 @@ abstract class Shape {
 	}
 }
 
-class Point {
+//시작위치 알려주는 클래스
+class Point {	
 	int x;
 	int y;
 	Point() {
