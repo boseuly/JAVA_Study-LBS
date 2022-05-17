@@ -21,22 +21,61 @@ WHERE EXTRACT(YEAR FROM HIRE_DATE) >= 2000
  	  AND SALARY >= 5000;
 /*
  * 홍유라 문제 
+ * EMPLOYEES 테이블에서 EMPLOYEE_ID 를 조회하고 "사번"이라고 별칭을 부여한다.
+ * FIRST_NAME 과 LAST_NAME 은 한 컬럼에 조회되도록 하며 "이름"이라고 별칭을 부여한다.
+ * PHONE_NUMBER 컬럼을 조회할 때는 첫 번째 '.'의 앞이 011 로 시작하는 데이터만 조회한다. 별칭은 "전화번호"로 한다.
+ * SALARY 컬럼을 조회할 때는 뒤에 '$' 가 표시되도록 한다.
  */
-
+SELECT EMPLOYEE_ID 사번
+	 , FIRST_NAME || LAST_NAME 이름
+	 , PHONE_NUMBER 전화번호 
+	 , SALARY || '$' 
+FROM EMPLOYEES
+WHERE SUBSTR(PHONE_NUMBER, 1, INSTR(PHONE_NUMBER,'.') - 1) = '011';
+ 	 
 /*
- * 김규연 문제 
+ * 김규연 문제
+ * 1991년 3월 1일과 1997년 02월 20일 사이에 입사한 사원이름, 급여, 입사일을 출력하시오.
+ * 컬럼명은 한글로 별칭을 부여하시오.
+ * (사원의 이름은 두 이름(LAST_NAME, FIRST_NAME)을 합쳐서 출력되도록 하시오.) 
  */
+SELECT FIRST_NAME || LAST_NAME 사원이름
+	 , SALARY 급여 
+	 , HIRE_DATE 입사일
+FROM EMPLOYEES
+WHERE HIRE_DATE BETWEEN '1991/03/01' AND '1997/02/20'; 
 
 
 /*
  * 김재은 문제
+ * 1주차 문제.
+ * DEPARTMENTS 테이블에서 DEPARTMENT_NAME이 C로 시작하거나 LOCATION_ID가 1800과 2500사이에 있는 모든 정보를 출력하라.
+ *  - 컬럼명은 모두 한글로 변경한다.
+ *    (DEPARTMENT_ID -> 부서아이디, DEPARTMENT_NAME -> 부서이름
+ *     MANAGER_ID -> 관리번호, LOCATION_ID -> 위치아이디)
  */
+SELECT * FROM DEPARTMENTS;
+
+SELECT DEPARTMENT_ID 부서아이디 
+	 , DEPARTMENT_NAME 부서이름
+	 , MANAGER_ID 관리번호
+	 , LOCATION_ID 위치아이디
+FROM DEPARTMENTS
+WHERE SUBSTR(DEPARTMENT_NAME, 1, 1) = 'C'
+   OR LOCATION_ID BETWEEN 1800 AND 2500; 
+
 
 
 /*
- * 김경욱 문제 
-<<<<<<< HEAD
+ * 김경욱 문제
+ * 문제 EMPLOYEES 테블에서 MANAGER_ID가 100, 102, 202 인 사람의 NAME , EMAIL , PHONE_NUMBER , SALARY조회 
+ * 단, FIRST_NAME LAST_NAME 은 하나의 컬럼(EMP_NAME)으로 조회되도록함  
  */ 
-=======
- */
->>>>>>> branch 'main' of https://github.com/boseuly/Study_LBS.git
+SELECT FIRST_NAME || LAST_NAME EMP_NAME 
+	 , EMAIL
+	 , PHONE_NUMBER
+	 , SALARY
+FROM EMPLOYEES
+WHERE MANAGER_ID IN(100,102,202);
+
+SELECT * FROM EMPLOYEES;
