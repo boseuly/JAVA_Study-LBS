@@ -32,12 +32,10 @@ public class Exercise8_8 {
 			input = new Scanner(System.in).nextInt();
 			try {
 				input = new Scanner(System.in).nextInt();
-				
 			}catch(InputMismatchException i){
 				System.out.println("유효하지 않은 값입니다. 다시 값을 입력해주세요.");
 				 continue; 
 			}
-			
 			if(answer > input) {
 					System.out.println("더 큰 수를 입력하세요."); 
 				} else if(answer < input) {

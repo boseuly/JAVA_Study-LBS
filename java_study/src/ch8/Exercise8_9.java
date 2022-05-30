@@ -37,13 +37,13 @@ public class Exercise8_9 {
 }
 
 class UnsupportedFuctionException extends RuntimeException {
-	private final int ERR_CODE = 100;		//에러코드 저장
+	private final int ERR_CODE;		//에러코드 저장
 	
 	
 	//생성자
 	public UnsupportedFuctionException (String msg, int code) {
 		super(msg);
-		//ERR_CODE = code;	//ERR_CODE는 상수라서 자꾸 에러 뜸
+		ERR_CODE = code;	//ERR_CODE는 상수라서 자꾸 에러 뜸
 	}
 	
 	public UnsupportedFuctionException(String msg) {
@@ -61,22 +61,4 @@ class UnsupportedFuctionException extends RuntimeException {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
