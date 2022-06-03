@@ -1,95 +1,106 @@
 /*
- * 이보슬 문제02
- * 
- * EMPLOYEES테이블에서 FIRST_NAME의 글자수가 5개이고 고용년도가 1998~2000 사이인 직원들의 
- * EMPLOYEE_ID, FIRST_NAME, EMAIL, HIRE_DATE를 조회하시오.
- * 	- EMAIL은 'EMAIL@gmail.com'와 같은 형식으로 출력되도록 하고 EMAIL 이라고 별칭을 부여한다.
- * 	- HIRE_DATE는 년도만 출력되도록 하고 HIRE_YEAR 라고 별칭을 부여한다. 
+ * 이보슬 문제
+ * EMPLOYEES 테이블에서 2000년대 이후에 고용되었으며 SALARY가 5000이상인 사람들의 모든 정보를 출력하시오.
+ * 	- FIRST_NAME과 LAST_NAME 은 NAME으로 출력한다. 
+ * 	- PHONE_NUMBER 는 '.' 대신 '-'으로 출력한다.
+ *   
  */
-
-
-SELECT EMPLOYEE_ID 
-	 , FIRST_NAME
-	 , CONCAT(EMAIL, '@gmail.com') EMAIL 
-	 , EXTRACT(YEAR FROM HIRE_DATE) HIRE_DATE 
-FROM EMPLOYEES
-WHERE FIRST_NAME LIKE '_____'
-  AND EXTRACT(YEAR FROM HIRE_DATE) BETWEEN 1998 AND 2000;
-  
- 
-SELECT EMPLOYEE_ID 
-	 , FIRST_NAME
-	 , CONCAT(EMAIL, '@gmail.com') EMAIL 
-	 , EXTRACT(YEAR FROM HIRE_DATE) HIRE_DATE 
-FROM EMPLOYEES
-WHERE FIRST_NAME LIKE '_____'
-  AND EXTRACT(YEAR FROM HIRE_DATE) IN(1998,1999,2000);
-
- 
- /*
-  *
-  * 홍유라 문제02
-  * COUNTRIES 테이블에서 REGION_ID 가 1 이면 'Europe'
-  * , 2 이면 'Americas', 3 이면 'Asia', 4 이면 'Middle East and Africa'로 
-  * 조회하되 각 개수를 하나의 컬럼으로 나타내도록 하시오.
-  */
-SELECT COUNTRY_ID 
-	 , COUNTRY_NAME 
-	 , DECODE(REGION_ID, 1, 'Europe', 2, 'Americas', 3, 'Asia', 4, 'Middle East and Africa') REGION 
-FROM COUNTRIES;
- 
- SELECT * FROM COUNTRIES; 
-
- /*
-  * 김규연 문제02
-  * EMPLOYEES 테이블에서
-  * 급여가 1000부터 3000 사이의 사람은 급여의 5%를 보너스를 받도록 하였다.	-> 급여가 1000~3000인 사람 WHERE 문에서 고르고 (O)
-  * 급여와 보너스를 합친 금액을 출력하세요. (단, 정수값 뒤에 두자릿수를 절삭해서 출력하세요.)	-> SELECT 문에서 TRUNC  
-  * 급여와 보너스의 경우 , 을 이용해서 천단위로 끊어서 출력하시오.(ex) 1,000,000)	-> TO_CHAR( , '999,999,999') (O)
-  * 이름은 함수를 이용해서 FISRT_NAME과 LAST_NAME을 합치세요.					-> CONCAT 사용 (O)
-  * 입사일은 "2022년 5월 19일 오후 05시 20분 48초" 형식으로 출력되게 하세요.		-> TO_CHAR
-  * 
-  * <별칭 부여> 
-  * SALARY -> 급여, 급여와 보너스 합친 금액 -> 총 급여			
-  * HIRE_DATE -> 입사일, FISRT_NAME와 LAST_NAME -> 이름
-  */
-SELECT CONCAT(FIRST_NAME, LAST_NAME) 이름
-	 , TO_CHAR(SALARY, '999,999,999') 급여
-	 , TO_CHAR(TRUNC(CASE WHEN SALARY >= 1000 AND SALARY <= 3000 THEN SALARY * 0.05 + SALARY
-	 		ELSE SALARY
-	 	END , -2) , '999,999,999') 총급여
-	 , TO_CHAR(HIRE_DATE, 'YYYY"년" MM"월" DD"일" HH"시" MI"분" SS"초"') 입사일
-FROM EMPLOYEES;
-
-
- 
-/* 김재은 문제02
- * EMPLOYEES 테이블에서 EMPLOYEE_ID, EMAIL, COMMISSION_PCT
- * , PHONE_NUMBER, SALARY, DEPARTMENT_ID를 출력하라
- *   - EMAIL 은 소문자로 출력하라.
- *   - COMMISSION_PCT 값이 NULL이면 0.05 가 출력되게 하라
- *   - PHONE_NUMBER의 앞에 세자리가 '515'면 '인사', '590'이면 '총무',
- *     '650'이면 '영업', '011'이면 '기획', 그 외에는 '비서'로 출력되게 하라
- */
-SELECT EMPLOYEE_ID 
-	 , LOWER(EMAIL) EMAIL
-	 , NVL(COMMISSION_PCT, 0.05) COMMISSION_PCT
-	 , DECODE(SUBSTR(PHONE_NUMBER, 1,3), '515','인사', '590','총무','650','영업','011','기획', '비서') PHONE_NUMBER 
+SELECT * FROM EMPLOYEES;
+SELECT EMPLOYEE_ID
+	 , FIRST_NAME||LAST_NAME NAME
+	 , EMAIL
+	 , REPLACE(PHONE_NUMBER,'.','-') PHONE_NUMBER
+	 , HIRE_DATE
+	 , JOB_ID
 	 , SALARY
+	 , COMMISSION_PCT
+	 , MANAGER_ID
 	 , DEPARTMENT_ID
-FROM EMPLOYEES;
+FROM EMPLOYEES
+WHERE EXTRACT(YEAR FROM HIRE_DATE) >= 2000 
+ 	  AND SALARY >= 5000;
+ 	 
+-- WHERE HIRE_DATE >= '2000.01.01'
+-- WHERE HIRE_DATE >= TO_DATE(20000101)
 
 /*
- * 김경욱 문제02
- * DECODE 함수로 직급에 따라 급여를 인상해봅시다 
- * 직급이 ‘ST_CLERK”인 사원은 200, ‘SA_MAN’인 사원은 180,
- * ‘SA_REP’인 사원은 150, ‘IT_PROG”인 사원은 100을 인상
- * 이름과 급여 인상된급여를 출력해주세요
- */ 
+ * 홍유라 문제 
+ * EMPLOYEES 테이블에서 EMPLOYEE_ID 를 조회하고 "사번"이라고 별칭을 부여한다.
+ * FIRST_NAME 과 LAST_NAME 은 한 컬럼에 조회되도록 하며 "이름"이라고 별칭을 부여한다.
+ * PHONE_NUMBER 컬럼을 조회할 때는 첫 번째 '.'의 앞이 011 로 시작하는 데이터만 조회한다. 별칭은 "전화번호"로 한다.
+ * SALARY 컬럼을 조회할 때는 뒤에 '$' 가 표시되도록 한다.
+ */
+SELECT EMPLOYEE_ID 사번
+	 , FIRST_NAME || LAST_NAME 이름
+	 , PHONE_NUMBER 전화번호 
+	 , SALARY || '$' 
+FROM EMPLOYEES
+WHERE SUBSTR(PHONE_NUMBER, 1, INSTR(PHONE_NUMBER,'.') - 1) = '011';
+ 	 
+/*
+ * SELECT EMPLOYEE_ID AS 사번
+     , FIRST_NAME   ' '  LAST_NAME AS 이름
+     , PHONE_NUMBER AS 전화번호
+     , SALARY || '$' AS 급여
+  FROM EMPLOYEES
+ WHERE PHONE_NUMBER LIKE'011.%';
+ */
 
-SELECT FIRST_NAME || LAST_NAME 이름 
-	 , SALARY 급여
-	 , DECODE(JOB_ID, 'ST_CLERK', SALARY + 200, 'SA_MAN', SALARY + 180, 'SA_REP', SALARY + 150, 'IT_PROG', SALARY + 100, SALARY) "인상된 급여"
-FROM EMPLOYEES;
+/*
+ * 김규연 문제
+ * 1991년 3월 1일과 1997년 02월 20일 사이에 입사한 사원이름, 급여, 입사일을 출력하시오.
+ * 컬럼명은 한글로 별칭을 부여하시오.
+ * (사원의 이름은 두 이름(LAST_NAME, FIRST_NAME)을 합쳐서 출력되도록 하시오.) 
+ */
+SELECT FIRST_NAME || LAST_NAME 사원이름
+	 , SALARY 급여 
+	 , HIRE_DATE 입사일
+FROM EMPLOYEES
+WHERE HIRE_DATE BETWEEN '1991/03/01' AND '1997/02/20'; 
+
+-- WHERE HIRE_DATE BETWEEN '91.03.01' AND '97.02.20'
+
+/*
+ * SELECT FIRST_NAME  ' '  LAST_NAME AS 사원이름
+     , SALARY AS 급여
+     , HIRE_DATE AS 입사일
+  FROM EMPLOYEES 
+  WHERE HIRE_DATE BETWEEN TO_DATE(19910301) AND TO_DATE(19970220);
+ */
+
+-- WHERE HIRE_DATE BETWEEN '1991-03-01' AND '1997-02-20';
+
+
+/*
+ * 김재은 문제
+ * 1주차 문제.
+ * DEPARTMENTS 테이블에서 DEPARTMENT_NAME이 C로 시작하거나 LOCATION_ID가 1800과 2500사이에 있는 모든 정보를 출력하라.
+ *  - 컬럼명은 모두 한글로 변경한다.
+ *    (DEPARTMENT_ID -> 부서아이디, DEPARTMENT_NAME -> 부서이름
+ *     MANAGER_ID -> 관리번호, LOCATION_ID -> 위치아이디)
+ */
+SELECT * FROM DEPARTMENTS;
+
+SELECT DEPARTMENT_ID 부서아이디
+	 , DEPARTMENT_NAME 부서이름
+	 , MANAGER_ID 관리번호
+	 , LOCATION_ID 위치아이디
+FROM DEPARTMENTS
+WHERE SUBSTR(DEPARTMENT_NAME, 1, 1) = 'C'	-- LIKE 사용
+   OR LOCATION_ID BETWEEN 1800 AND 2500;
+
+
+
+/*
+ * 김경욱 문제
+ * 문제 EMPLOYEES 테블에서 MANAGER_ID가 100, 102, 202 인 사람의 NAME , EMAIL , PHONE_NUMBER , SALARY조회 
+ * 단, FIRST_NAME LAST_NAME 은 하나의 컬럼(EMP_NAME)으로 조회되도록함  
+ */ 
+SELECT FIRST_NAME || LAST_NAME EMP_NAME 
+	 , EMAIL
+	 , PHONE_NUMBER
+	 , SALARY
+FROM EMPLOYEES
+WHERE MANAGER_ID IN(100,102,202);
 
 SELECT * FROM EMPLOYEES;
