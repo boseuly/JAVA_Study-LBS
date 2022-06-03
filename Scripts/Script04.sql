@@ -1,0 +1,57 @@
+/*
+ * 이보슬_문제04
+ * 
+ * 간단한 학생 관리 테이블을 생성해본다.
+ *
+ * <STUDENT 테이블>
+ * 1. STUDENT 테이블에는 STU_NO, STU_NAME 컬럼을 생성한다. (글자는 10자 이상으로 한다.)
+ * 		- 컬럼타입은 <STUDENT 테이블 생성 사진>을 확인한다.
+ * 		- STU_NO은 제약조건을 PRIMARY KEY로 설정하고, STU_NAME은 NOT NULL로 설정한다. (제약조건명은 따로 설정하지 않는다.)
+ * 		- STUDENT 테이블의 STU_NO 컬럼은 STUDENT_LEVEL 테이블의 STU_NO 컬럼을 참조하도록 한다.  
+ * 2. 테이블 생성이 끝난 뒤
+ * 		- STU_NO의 PRIMARY KEY 제약조건명을 PK_STUDENT_STU_NO 으로 변경해준다.
+ * 		- STU_NO의 FOREIGN KEY 제약조건명을 FK_STUDENT_STU_NO 으로 변경해준다.
+ * 	 	- STU_NAME의 NOT NULL 제약조건명은 NN_STUDENT_STU_NAME 으로 변경해준다. <STUDENT 테이블 제약조건 사진> 참고
+ * 
+ *  <STUDENT_LEVEL 테이블>
+ * 1. STUDENT_LEVEL 테이블은 STU_NO, LEVEL_NO, CLASS, TEACHER 컬럼을 갖도록 한다. (제약조건은 따로 설정하지 않는다.)
+ * 		- STU_NO 컬럼에 PRIMARY KEY 제약조건을 설정해주고 제약조건명은 PK_STUDENT_LEVEL_STU_NO 로 지어준다.
+ * 		- 컬럼타입은 <STUDENT_LEVEL 테이블 생성 사진>을 확인한다.
+ * 2. 테이블 생성이 끝난 뒤 
+ * 		- LEVEL_NO 컬럼에는 값이 1,2,3만 들어올 수 있도록 CHECK 제약조건을 추가해주고 제약조건명은 CK_STUDENT_LEVEL_LEVEL_NO 로 지어준다.
+ * 
+ */
+
+-- 1. STUDENT 테이블 생성
+CREATE TABLE STUDENT (
+	  STU_NO NUMBER 		PRIMARY KEY
+	, STU_NAME VARCHAR2(30)	NOT NULL
+	, FOREIGN KEY (STU_NO) REFERENCES STUDENT_LEVEL(STU_NO)
+);
+
+-- 2. 제약조건명 변경
+SELECT * FROM USER_CONSTRAINTS WHERE TABLE_NAME = 'STUDENT_LEVEL';
+ALTER TABLE STUDENT RENAME CONSTRAINT SYS_C0010196 TO NN_STUDENT_STU_NAME;
+ALTER TABLE STUDENT RENAME CONSTRAINT SYS_C0010197 TO PK_STUDENT_STU_NO;
+ALTER TABLE STUDENT RENAME CONSTRAINT SYS_C0010198 TO FK_STUDENT_STU_NO;
+
+-- 1. STUDENT_LEVEL 테이블 생성
+CREATE TABLE STUDENT_LEVEL( 
+	  STU_NO NUMBER		CONSTRAINT PK_STUDENT_LEVEL_STU_NO PRIMARY KEY 
+	, LEVEL_NO NUMBER 
+	, CLASS NUMBER
+	, TEACHER VARCHAR2(30)
+);
+
+ALTER TABLE STUDENT_LEVEL MODIFY LEVEL_NO CONSTRAINT CK_STUDENT_LEVEL_LEVEL_NO CHECK(LEVEL_NO BETWEEN 1 AND 3);
+
+
+
+
+
+
+
+
+
+
+
