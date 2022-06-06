@@ -1,5 +1,7 @@
 package ch9;
 
+import java.util.Arrays;
+
 public class Exercise9_6 {
 	/*	[9-6] 다음과 같이 정의된 메서드를 작성하고 테스트하시오.
 		메서드명 : fillZero
@@ -12,16 +14,41 @@ public class Exercise9_6 {
 
 	 */
 	public static String fillZero(String src, int length) {
-		/* (1) fillZero . 메서드를 작성하시오.
+		/* (1) fillZero 메서드를 작성하시오.
 			1. src가 널이거나 src.length()가 length와 같으면 src를 그대로 반환한다.
 			2. length 의 값이 0보다 같거나 작으면 빈 문자열 ("")을 반환한다.
 			3. src 의 길이가 length의 값보다 크면 src를 length만큼 잘라서 반환한다.
 			4. 길이가 length인 char배열을 생성한다.
 			5. 4에서 생성한 char 배열을 '0'으로 채운다.
-			6. src에서 문자배열을 뽑아내서  4에서 생성한 배열에 복사한다.
+			6. src에서 문자배열을 뽑아내서 4에서 생성한 배열에 복사한다.
 			7. 4 에서 생성한 배열로 String을 생성해서 반환한다.
 		*/
+		if(src == null || src.length() == length) {
+			return src;
+		}
+		if(length <= 0) {
+			return "";
+		}
 		
+		if(src.length() >= length) {
+			return src.substring(0, length);
+		}
+		if(src.length() < length) {
+			char[] c = new char[length];
+			char[] cArr = new char[src.length()];	// 배열 크기 늘리기
+			for(int i = 0; i < c.length ; i++) {
+				c[i] = '0';
+			}
+			for(int i = 0; i < src.length(); i++) {
+				cArr[i] = src.charAt(i);
+			}
+			System.arraycopy(cArr, 0, c, c.length - cArr.length, cArr.length);
+			String str = "";
+			for(int i = 0; i < length ; i++) {
+				str += c[i];
+			}
+			return str;
+		}
 		return null;
 		}
 	public static void main(String[] args) {
