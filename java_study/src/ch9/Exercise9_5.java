@@ -20,8 +20,8 @@ public class Exercise9_5 {
 			3. indexOf 의 결과가 -1이면 반복문을 빠져나가서 count를 반환한다.
 		*/
 		while(src.indexOf(target, pos) != -1) {
-			pos = target.length();	// pos=0, pos=0+2 pos= 4+2 // 여기 다시 하기
 			++count;
+			pos += target.length();	// pos=0, pos=0+2 pos= 4+2 
 			}
 		return count;
 		}
