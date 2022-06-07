@@ -13,7 +13,7 @@ public class Exercise9_4 {
 */
 		for(int i = 0; i < dataArr.length; i++) {
 			for(int j = 0 ; j < dataArr[i]; j++) {
-				System.out.print("*");
+				System.out.print(ch);
 				if(j == dataArr[i]-1) {
 					System.out.print(j+1);
 				}
@@ -21,10 +21,7 @@ public class Exercise9_4 {
 			System.out.println();//개행
 		}
 		
-		
-		
-		
-		}
+	}
 
 	public static void main(String[] args) {
 		printGraph(new int[]{3,7,1,4},'*');

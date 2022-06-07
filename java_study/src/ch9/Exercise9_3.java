@@ -18,6 +18,14 @@ public class Exercise9_3 {
 	}
 
 }
+/*
+ * int pos = fullPath.lastIndexOf("\\");
+ * if(pos != -1){
+ * 	path = fullPath.substring(0,pos);
+ * 	fileName = fullPath.substring(pos+1);
+ * }
+ * 
+ */
 // <실행결과>
 //fullPath:c:\jdk1.8\work\PathSeparateTest.java
 //path:c:\jdk1.8\work					(0~14)

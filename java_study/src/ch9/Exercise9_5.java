@@ -20,7 +20,7 @@ public class Exercise9_5 {
 			3. indexOf 의 결과가 -1이면 반복문을 빠져나가서 count를 반환한다.
 		*/
 		while(src.indexOf(target, pos) != -1) {
-			pos = src.indexOf(target, pos) + 2;
+			pos = target.length();	// pos=0, pos=0+2 pos= 4+2 // 여기 다시 하기
 			++count;
 			}
 		return count;
@@ -28,7 +28,7 @@ public class Exercise9_5 {
 		
 
 	public static void main(String[] args) {
-		System.out.println(count("12345AB12AB345AB","AB"));		// 5에서 끝, 6부터 시작
+		System.out.println(count("aaaaaaaaaa","aaa"));		// 5에서 끝, 6부터 시작
 		System.out.println(count("12345","AB"));
 
 	}

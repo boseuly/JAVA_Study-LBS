@@ -28,7 +28,7 @@ class SutdaCard {
 
 	public boolean equals(Object obj) {
 		if(obj instanceof SutdaCard) {	// 만약 obj가 SutdaCard클래스참조변수라면
-			if(this.num != ((SutdaCard) obj).num ) {
+			if(this.num != ((SutdaCard) obj).num ) {	//
 				return false;
 			}
 			if(this.isKwang != ((SutdaCard) obj).isKwang ) {

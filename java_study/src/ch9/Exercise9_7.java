@@ -10,7 +10,7 @@ public class Exercise9_7 {
 				String target
 		[Hint] String클래스의 indexOf()를 사용할 것
 	
-	(1) contains . 메서드를 작성하시오
+	(1) contains 메서드를 작성하시오.
 	*/
 	static boolean contains(String src, String target) {
 		if(src.indexOf(target) != -1) {
