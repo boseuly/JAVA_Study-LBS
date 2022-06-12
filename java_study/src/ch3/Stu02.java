@@ -1,4 +1,4 @@
-package exam03;
+package ch3;
 
 public class Stu02 {
 	boolean isPowerOn;		// 전원

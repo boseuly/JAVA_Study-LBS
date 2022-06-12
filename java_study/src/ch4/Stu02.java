@@ -1,4 +1,4 @@
-package exam04;
+package ch4;
 
 // 수정본
 class Product{

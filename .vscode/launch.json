@@ -1,0 +1,343 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu01",
+            "request": "launch",
+            "mainClass": "ch1.Stu01",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu02",
+            "request": "launch",
+            "mainClass": "ch1.Stu02",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu03",
+            "request": "launch",
+            "mainClass": "ch1.Stu03",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu04",
+            "request": "launch",
+            "mainClass": "ch1.Stu04",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu01(1)",
+            "request": "launch",
+            "mainClass": "ch2.Stu01",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu02(1)",
+            "request": "launch",
+            "mainClass": "ch2.Stu02",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu03(1)",
+            "request": "launch",
+            "mainClass": "ch2.Stu03",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu04(1)",
+            "request": "launch",
+            "mainClass": "ch2.Stu04",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu05",
+            "request": "launch",
+            "mainClass": "ch2.Stu05",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu06",
+            "request": "launch",
+            "mainClass": "ch2.Stu06",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu07",
+            "request": "launch",
+            "mainClass": "ch2.Stu07",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu01(2)",
+            "request": "launch",
+            "mainClass": "ch3.Stu01",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu02(2)",
+            "request": "launch",
+            "mainClass": "ch3.Stu02",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu03(2)",
+            "request": "launch",
+            "mainClass": "ch3.Stu03",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu04(2)",
+            "request": "launch",
+            "mainClass": "ch3.Stu04",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu05(1)",
+            "request": "launch",
+            "mainClass": "ch3.Stu05",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu01(3)",
+            "request": "launch",
+            "mainClass": "ch4.Stu01",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu02(3)",
+            "request": "launch",
+            "mainClass": "ch4.Stu02",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu03(3)",
+            "request": "launch",
+            "mainClass": "ch4.Stu03",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stu04(3)",
+            "request": "launch",
+            "mainClass": "ch4.Stu04",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_17",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_17",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_18",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_18",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_19",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_19",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_20",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_20",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_22",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_22",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_25",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_25",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_26",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_26",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_27",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_27",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise7_28",
+            "request": "launch",
+            "mainClass": "ch7.Exercise7_28",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise8_10",
+            "request": "launch",
+            "mainClass": "ch8.Exercise8_10",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise8_5",
+            "request": "launch",
+            "mainClass": "ch8.Exercise8_5",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise8_6",
+            "request": "launch",
+            "mainClass": "ch8.Exercise8_6",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise8_7",
+            "request": "launch",
+            "mainClass": "ch8.Exercise8_7",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise8_8",
+            "request": "launch",
+            "mainClass": "ch8.Exercise8_8",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise8_9",
+            "request": "launch",
+            "mainClass": "ch8.Exercise8_9",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_1",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_1",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_10",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_10",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_11",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_11",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_12",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_12",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_2",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_2",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_3",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_3",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_4",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_4",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_5",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_5",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_6",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_6",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_7",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_7",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_8",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_8",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercise9_9",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_9",
+            "projectName": "java_study"
+        }
+    ]
+}

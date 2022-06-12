@@ -1,4 +1,4 @@
-package exam03;
+package ch3;
 
 import java.util.Arrays;
 

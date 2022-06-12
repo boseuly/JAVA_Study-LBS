@@ -1,4 +1,4 @@
-package exam02;
+package ch2;
 
 class Stu01{
 	public static void main(String args[]) {

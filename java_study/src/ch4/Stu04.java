@@ -1,4 +1,4 @@
-package exam04;
+package ch4;
 
 
 class MyTv2{

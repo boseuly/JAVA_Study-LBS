@@ -1,4 +1,4 @@
-package exam04;
+package ch4;
 
 class SutdaDeck{
 	final int CARD_NUM = 20;	

@@ -1,4 +1,4 @@
-package exam01;
+package ch1;
 
 import java.util.Random;
 import java.util.Scanner;
