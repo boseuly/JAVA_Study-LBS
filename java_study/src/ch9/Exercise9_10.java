@@ -18,12 +18,12 @@ public class Exercise9_10 {
         2. 1 의 경우가 아니면, length 크기의 char배열을 생성하고 공백으로 채운다.
         3. 정렬조건 (alignment)의 값에 따라 문자열 (str)을 복사할 위치를 결정한다.
             (System.arraycopy() ) 사용
-        4. 2 char . 에서 생성한 배열을 문자열로 만들어서 반환한다
+        4. 2 char 에서 생성한 배열을 문자열로 만들어서 반환한다
     */
     public static String format(String str, int length, int alignment){
         if(length < str.length()){  // length가 str의 길이보다 작다면
             // length 만큼만 잘라서 반환! 
-            return str.substring(0, length);  
+            return str.substring(0, length); // substring은 endIndex - 1 이어서 -1 안 해줘도 된다.
         }
         // str을 char형으로 바꾸기(arraycopy() 타입 맞추려고)
         char ch[]  = str.toCharArray();
@@ -37,7 +37,7 @@ public class Exercise9_10 {
         if(alignment == 0){
             System.arraycopy(ch, 0, result, 0, ch.length); // str의 0번째 인덱스부터 str.length() 만큼을
         }else if(alignment == 1){                                              // result의 0번째 인덱스부터 시작해서 복사해라
-            System.arraycopy(ch, 0, result, length/2, ch.length);  // result의 length/2번째 인덱스부터 시작해서 복사해라
+            System.arraycopy(ch, 0, result, (length - str.length())/2, ch.length);  // result의 length/2번째 인덱스부터 시작해서 복사해라
         }else if(alignment == 2){
             System.arraycopy(ch, 0, result, length - ch.length, ch.length);
         }

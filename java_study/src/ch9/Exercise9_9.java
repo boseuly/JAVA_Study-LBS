@@ -25,9 +25,24 @@ public class Exercise9_9 {
         return sb.toString();
     }
 
+    /* 규연언니 풀이
+     * static String delChar(String src, String delCh) {
+        StringBuilder sb = new StringBuilder(src);
+        for(int i = 0; i < sb.length(); i++) {
+            for(int j = 0; j < delCh.length(); j++) {
+                if(sb.charAt(i) == delCh.charAt(j) ){
+                    sb.deleteCharAt(i);
+                    break;
+                }
+            }
+        }
+        return sb.toString();
+    }
+     */
+
 
     public static void main(String[] args) {
         System.out.println("(1!2@3^4~5)"+" -> "  + delChar("(1!2@3^4~5)","~!@#$%^&*()"));
-        System.out.println("(1 2    3    4/t5)"+" -> " + delChar("(1 2     3    4/t5)"," \t"));
+        System.out.println("(1 2    3    4\t5)"+" -> " + delChar("(1 2     3    4\t5)"," \t"));
     }
 }

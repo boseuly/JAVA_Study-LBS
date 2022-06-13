@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Exercise9_13",
+            "request": "launch",
+            "mainClass": "ch9.Exercise9_13",
+            "projectName": "java_study"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
