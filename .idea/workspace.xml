@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03c18c33-1c8e-4d88-9a89-d5a636351e3c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/.project" beforeDir="false" afterPath="$PROJECT_DIR$/Study_LBS/java_study/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam01/Stu01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam01/Stu02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam01/Stu03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam01/Stu04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam02/Stu01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam02/Stu02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam02/Stu03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam02/Stu04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam02/Stu05.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam02/Stu06.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam02/Stu07.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam03/Stu01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam03/Stu02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam03/Stu03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam03/Stu04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam03/Stu05.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam04/Stu01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam04/Stu02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam04/Stu03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study_LBS/java_study/src/exam04/Stu04.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ASdfeiQsZ3klrB29Tx1N4lnPHd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03c18c33-1c8e-4d88-9a89-d5a636351e3c" name="Changes" comment="" />
+      <created>1655007026523</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655007026523</updated>
+    </task>
+    <servers />
+  </component>
+</project>
