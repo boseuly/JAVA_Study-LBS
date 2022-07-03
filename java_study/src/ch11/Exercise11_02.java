@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Stack;
 import java.util.TreeSet;
 
-public class Exercise11_2 {
+public class Exercise11_02 {
 
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();

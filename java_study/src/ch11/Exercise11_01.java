@@ -3,7 +3,7 @@ package ch11;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Exercise11_1 {
+public class Exercise11_01 {
 
 	public static void main(String[] args) {
 
@@ -67,6 +67,22 @@ public class Exercise11_1 {
 		 list1 = (ArrayList) copy1.clone();
 		 // 합집합 정렬
 		Collections.sort(hap);
+		
+		/*
+		 // 교집합
+        kyo.addAll(list1);
+        kyo.retainAll(list2); // 공통된 것들만 남기고 나머지 삭제
+
+        // 차집합
+        cha.addAll(list1);
+        cha.removeAll(list2); // 지정한 컬렉션에 저장된 것과 동일한 객체들을 ArrayList에서 제거
+
+        // 합집합
+        hap.addAll(list1);
+        hap.addAll(list2);
+        hap.remove(2);
+        hap.remove(2); // 인덱스 자리가 자동으로 당겨지네...
+		 */
 	
 		System.out.println("list1="+list1);
 		System.out.println("list2="+list2);
