@@ -41,7 +41,6 @@ class Student implements Comparable {
 		if(o instanceof Student) {
 			Student s = (Student)o; // 매개변수 o를 Student로 다운캐스팅
 			return this.name.compareTo(s.name);
-			
 		}else {
 			return -1;
 		}

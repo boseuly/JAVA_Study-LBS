@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 
-class Student {
+class Student6 {
 	String name;
 	int ban;
 	int no;
@@ -13,7 +13,7 @@ class Student {
 	int eng;
 	int math;
 	// 생성자로 초기화 
-	Student(String name, int ban, int no, int kor, int eng, int math) {
+	Student6(String name, int ban, int no, int kor, int eng, int math) {
 		this.name = name;
 		this.ban = ban;
 		this.no = no;
@@ -47,10 +47,10 @@ class BanNoAscending implements Comparator {
 	/*
 	(1) 알맞은 코드를 넣어 완성하시오.
 	*/
-		// 만약 Student 클래스라면
+		// 만약 Student6 클래스라면
 		if(o1 instanceof Student && o2 instanceof Student) {
-			Student s1 = (Student)o1;
-			Student s2 = (Student)o2;
+			Student6 s1 = (Student6)o1;
+			Student6 s2 = (Student6)o2;
 			Integer ban1 = s1.ban;
 			Integer ban2 = s2.ban;
 			
@@ -95,11 +95,11 @@ public class Exercise11_07 {
 		 * 반(ban)과 번호(no)로 오름차순 정렬되게 하시오. (반이 같은 경우 번호를 비교해서 정렬한다.)
 		 */
 		ArrayList list = new ArrayList();
-		list.add(new Student("이자바",2,1,70,90,70));
-		list.add(new Student("안자바",2,2,60,100,80)); 
-		list.add(new Student("홍길동",1,3,100,100,100)); 
-		list.add(new Student("남궁성",1,1,90,70,80)); 
-		list.add(new Student("김자바",1,2,80,80,90)); 
+		list.add(new Student6("이자바",2,1,70,90,70));
+		list.add(new Student6("안자바",2,2,60,100,80)); 
+		list.add(new Student6("홍길동",1,3,100,100,100)); 
+		list.add(new Student6("남궁성",1,1,90,70,80)); 
+		list.add(new Student6("김자바",1,2,80,80,90)); 
 		Collections.sort(list, new BanNoAscending());
 		Iterator it = list.iterator();
 		while(it.hasNext())

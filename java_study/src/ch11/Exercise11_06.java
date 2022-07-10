@@ -51,10 +51,11 @@ public class Exercise11_06 {
 	(1) 알맞은 코드를 넣어 완성하시오 // 틀림
 	*/
 	private static int getGroupCount(TreeSet tset, int from, int to) {
-		Student2 s1 = new Student2("",0,0,from,from,from);
+		Student2 s1 = new Student2("",0,0,from,from,from);	// 모든 과목의 점수를 from으로 하면 평균도 from 이니까
 		Student2 s2 = new Student2("",0,0,to,to,to);
-		return tset.subSet(s1,s2).size();
+		return tset.subSet(s1,s2).size();		// 두 개의 요소 사이의 결과를 반환한다. -> s1과 s2 사이의 값을 반환
 	}
+	
 	
 	public static void main(String[] args) {
 	/*
@@ -76,8 +77,6 @@ public class Exercise11_06 {
 				}else {
 					return -1;
 				}
-				
-				
 			}
 			});
 			set.add(new Student2("홍길동",1,1,100,100,100)); 
