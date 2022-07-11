@@ -26,5 +26,39 @@ public class Exercise10_1 {	// 틀림
 	            cal.set(Calendar.DAY_OF_MONTH,1);
 	        }
 	}
+	
+	/* 재은언니
+	 * Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd은 F번째 E요일입니다.");
+
+        for(int i = 0; i <= 11; i++) {
+            for(int j = 1; j <= 31; j++) {
+                cal.set(2010, i, j);
+                Date date = cal.getTime();
+                if(cal.get(Calendar.DAY_OF_WEEK_IN_MONTH) == 2 && cal.get(Calendar.DAY_OF_WEEK) == 1) {
+                    System.out.println(sdf.format(date));
+                }
+            }
+        }
+	 * 
+	 */
+	
+	/* 규연언니
+	 * Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("F번째 E요일입니다.");
+        
+        for(int i = 0; i < 12; i++) {
+            for(int j = 1; j <= 31 ; j++) {
+                cal.set(2010, i, j);
+                Date day = cal.getTime();
+                if(sdf2.format(day).equals("2번째 일요일입니다.")) {
+                    System.out.println(sdf1.format(day) + "은 " + sdf2.format(day));
+                }
+            }
+        }
+	 * 
+	 */
+	
 
 }

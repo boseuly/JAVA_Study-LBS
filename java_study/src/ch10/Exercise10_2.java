@@ -38,8 +38,8 @@ public class Exercise10_2 {
 		 int fromDay = from.get(Calendar.DAY_OF_MONTH );
 		 
 		 // to와 from 이 몇 개월 차이인지 계산 )
-//		monthDiff = toMonth - fromMonth; (이거 이렇게 계산하면 안 되는 이유,, )
-		int monthDiff = (toYear * 12 + toMonth ) - (fromYear * 12 + toMonth);
+//		monthDiff = toMonth - fromMonth; (이거 이렇게 계산하면 안 되는 이유 : 3월 1일과 4월 31일 달로 계산했을 때의 차이와 일로 계산했을 때의 차이가 다르다.)
+		int monthDiff = (toYear * 12 + toMonth ) - (fromYear * 12 + fromMonth);
 		 // monthDiff가 음수라면 0을 반환
 		 if(monthDiff < 0 ) {
 			 return 0;
@@ -66,34 +66,43 @@ public class Exercise10_2 {
 /*
 [10-2] 어떤 회사의 월급날이 매월 21일이다. 두 날짜 사이에 월급날이 몇 번있는지 계산해서 반환하는 메서드를 작성하고 테스트 하시오.
  */
-	
-				Calendar fromCal = Calendar.getInstance();
-				Calendar toCal = Calendar.getInstance();
+//	
+//				Calendar fromCal = Calendar.getInstance();
+//				Calendar toCal = Calendar.getInstance();
+//				
+//				fromCal.set(2010,0,1);
+//				toCal.set(2010,0,1);
+//				printResult(fromCal, toCal);
+//				
+//				fromCal.set(2010,0,21);
+//				toCal.set(2010,0,21);
+//				printResult(fromCal, toCal);
+//				
+//				fromCal.set(2010,0,1);
+//				toCal.set(2010,2,1);
+//				printResult(fromCal, toCal);
+//				
+//				fromCal.set(2010,0,1);
+//				toCal.set(2010,2,23);
+//				printResult(fromCal, toCal);
+//				
+//				fromCal.set(2010,0,23);
+//				toCal.set(2010,2,21);
+//				printResult(fromCal, toCal);
+//				
+//				fromCal.set(2011,0,22);
+//				toCal.set(2010,2,21);
+//				printResult(fromCal, toCal);
+//				
+				// eDay.set(year, month-1, day) 이런 식으로 달에 -1을 해줘야 한다고 했는데 
+				Calendar cal = Calendar.getInstance();
+				Date date = new Date();
 				
-				fromCal.set(2010,0,1);
-				toCal.set(2010,0,1);
-				printResult(fromCal, toCal);
-				
-				fromCal.set(2010,0,21);
-				toCal.set(2010,0,21);
-				printResult(fromCal, toCal);
-				
-				fromCal.set(2010,0,1);
-				toCal.set(2010,2,1);
-				printResult(fromCal, toCal);
-				
-				fromCal.set(2010,0,1);
-				toCal.set(2010,2,23);
-				printResult(fromCal, toCal);
-				
-				fromCal.set(2010,0,23);
-				toCal.set(2010,2,21);
-				printResult(fromCal, toCal);
-				
-				fromCal.set(2011,0,22);
-				toCal.set(2010,2,21);
-				printResult(fromCal, toCal);
-
+//				cal.set(2022,11, 1);			 // set에 11
+//				System.out.println(cal.get(Calendar.MONTH));// 11 -> 12  교재 내용대로라면 -1이 된 3이 나와야 하는데 4가 나옴..
+//				cal.add(cal.get(Calendar.MONTH), 1);	// 11 -> 12
+//				System.out.println(cal.get(Calendar.MONTH));
+//				
 	}
 /* 실행결과
  * 2010-01-01 ~ 2010-01-01:0

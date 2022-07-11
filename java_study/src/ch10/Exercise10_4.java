@@ -30,14 +30,10 @@ public class Exercise10_4 {
 			} catch (ParseException e) {
 				System.out.println("날짜를 yyyy/MM/dd 형식으로 입력해주세요.(입력예 : 2022/06/18)");
 			} 
-			
 		}
-
 		System.out.println(sdf.format(inDate));
 		SimpleDateFormat sdf2 = new SimpleDateFormat("입력하신 날짜는 E요일입니다.");
 		System.out.println(sdf2.format(inDate));
-		
-		
 	}
 
 }

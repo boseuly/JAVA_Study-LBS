@@ -14,7 +14,7 @@ public class Exercise10_5 {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
 		try{
-			date1 = sdf.parse(yyyymmdd1);
+			date1 = sdf.parse(yyyymmdd1);	// NUMBER 로 바꿔주고
 			date2 = sdf.parse(yyyymmdd2);
 		}catch (Exception e) {
 			return 0;
